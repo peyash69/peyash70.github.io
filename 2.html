@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+#myDIV 
+{
+    float: center;
+    width: 800px;
+    height: 50px;
+    background-color: coral;
+    font-family: "Times New Roman", Times, serif;
+    color: white;
+    margin-left: 250px;
+    border: 5px solid yellow;
+    text-align: center;
+    padding: 10px; 
+}
+#frm1
+{
+    float: center;
+    margin: 20px;
+}
+</style>
+</head>
+
+
+<body>
+<div id="myDIV">
+  <form name="myform" id="frm1" action="form_action.asp">
+  Convert <input type="text" name="conv" value="">
+
+  <select id="mySelect">
+    <option value="PtoK">Pound to Kilogram</option>
+    <option value="KtoP">Kilogram to Pound</option>
+  </select>
+  <button type="button" onclick="answers();">GO</button>
+
+  <input type="text" name="conv1" value="">
+  </form>
+
+  <p id="demo"></p>
+  <script type="text/javascript">
+  function answers()
+  {
+     var select = document.getElementById("mySelect");
+     var answer = select.options[select.selectedIndex].value;
+     if(answer == "PtoK")
+     {
+        F=document.myform.conv.value*0.4536
+        document.myform.conv1.value=(F)+" kilograms" 
+     }
+     else
+     {
+        F=document.myform.conv.value*2.2046
+        document.myform.conv1.value=(F)+" pounds"
+     }
+  }
+  </script>  
+</div>
+</body>
+</html>

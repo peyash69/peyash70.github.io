@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<style>
+
+#myDIV
+{
+    float: left;
+    width: 800px;
+    height: 50px;
+    margin-left: left;
+    text-align: left;
+    padding: 10px;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<div id="myDIV">
+Input Series of Number
+<input type="text" id="myText" value="">
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+<p id="demo5"></p>
+
+<script>
+function myFunction() 
+{
+    var x = document.getElementById("myText").value;
+
+    var y = x.split(",");
+
+    var points = x.split(",");
+    points.sort(function(a, b){return a-b});
+    
+    var l = points.length;
+
+    var i=0;
+    var sum=0;
+    var avg=0;
+    while(i<l)
+    {
+      var m=points[i];
+      sum = +sum + +m;
+      i++;
+    }
+    avg = (sum/l);
+
+    var n=l-1;
+    var text = "";
+    while(n>=0)
+    {
+       text += y[n] + "," ;
+       n--;
+    }
+
+    text = text.substring(",", text.length - 1);
+
+    document.getElementById("demo1").innerHTML = "Max: "+points[points.length-1];
+    document.getElementById("demo2").innerHTML = "Min: "+points[0];
+    document.getElementById("demo3").innerHTML = "Sum: "+sum;
+    document.getElementById("demo4").innerHTML = "Avg: "+avg;
+    document.getElementById("demo5").innerHTML = "Reverse: "+text;
+}
+</script>
+</div>
+</body>
+
+</html>

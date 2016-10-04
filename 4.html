@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+#myDIV 
+{
+    float: center;
+    width: 850px;
+    height: 400px;
+    background-color: coral;
+    font-family: "Times New Roman", Times, serif;
+    color: white;
+    margin-left: 250px;
+    border: 5px solid yellow;
+    text-align: center;
+    padding: 10px; 
+}
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px 2px;
+    cursor: pointer;
+    float: left-center;
+}
+</style>
+</head>
+
+<body>
+<div id="myDIV">
+    <h1 style="color:black;float: left;width: 180px;">Magic!!!</h1>
+    
+<textarea id="myTextarea" rows="15" cols="110">
+Sample Item 1
+Sample Item 7
+Sample Item 3
+Sample Item 6
+
+Sample Item 5
+Sample Item 4
+
+
+Sample Item 2
+</textarea>
+
+<button type="button" class="button" onclick="myFunction()">Clear it</button>
+<button type="button" class="button" onclick="myFunction1()">Capitalize</button>
+<button type="button" class="button" onclick="myFunction2()">Sort</button>
+<button type="button" class="button" onclick="myFunction3()">Strip Blank</button>
+<button type="button" class="button" onclick="myFunction4()">Shuffle</button>
+
+<button type="button" class="button" onclick="myFunction6()">Reverse</button>
+<button type="button" class="button" onclick="myFunction5()">Add Numbers</button>
+
+<script>
+function myFunction() {
+    document.getElementById("myTextarea").value = "";
+}
+</script>
+<p id="demo"></p>
+<script>
+function myFunction1() 
+{
+	var s = document.getElementById("myTextarea").value;
+	if(s[0]==="S")
+	{
+    	var str = document.getElementById("myTextarea").value;
+        var res = str.toLowerCase();
+        document.getElementById("myTextarea").innerHTML = res;
+    }
+    else
+    {
+	    var str = document.getElementById("myTextarea").value;
+	    var res = str.toUpperCase();
+	    document.getElementById("myTextarea").innerHTML = res;
+    }
+}
+</script>
+
+<script>
+function myFunction2() 
+{
+    var x = document.getElementById("myTextarea").value;
+    var points = x.split('\n');
+    points.sort();
+	var text = "";
+	var i;
+	for (i = 0; i < points.length; i++) 
+	{
+	    text += points[i] + "\n";
+	}
+    document.getElementById("myTextarea").innerHTML = text;
+}
+</script>
+
+<script>
+function myFunction3() 
+{
+    var inputString = document.getElementById("myTextarea").value;
+    var outputString = inputString.replace(/^\s*[\r\n]/gm, "").replace(/^\n$/, "");
+
+    document.getElementById("myTextarea").innerHTML = outputString;
+}
+</script>
+
+<script>
+function myFunction4() 
+{
+    var inputString = document.getElementById("myTextarea").value;
+    var outputString = inputString.replace(/^\s*[\r\n]/gm, "").replace(/^\n$/, "");
+
+    document.getElementById("myTextarea").innerHTML = outputString;;
+}
+</script>
+
+<script>
+function myFunction5() 
+{
+    var y = document.getElementById("myTextarea").value;
+    var points = y.split('\n');
+    var text = "";
+    var j=1;
+    for (i = 0; i < points.length-1; i++) 
+    {
+        text += j+" "+ points[i] + "\n";
+        j++;
+    }
+    document.getElementById("myTextarea").innerHTML = text;
+}
+</script>
+
+<script>
+function myFunction6() 
+{
+    var y = document.getElementById("myTextarea").value;
+    var points = y.split('\n');
+    for (i = 0; i < points.length-1; i++) 
+    {
+        var m = points[i];
+        var l=m.split(" ")
+        var n = l.length;
+        var x=0;
+        var t="";
+        while(n>=x)
+        {
+            t += l[n];
+            n--;
+        } 
+        text += t + "\n";
+    }
+    document.getElementById("myTextarea").innerHTML = text;
+}
+</script>
+
+</div>
+</body>
+</html>

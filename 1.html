@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+#myDIV 
+{
+	float: left;
+    width: 600px;
+    height: 150px;
+    background-color: coral;
+    font-family: "Times New Roman", Times, serif;
+    color: white;
+    margin: 20px;
+    border: 10px solid yellow;
+    text-align: center; 
+}
+#box2 
+{
+	float: left;
+    width: auto;
+    height: auto;
+    background-color: white;
+    color: white;
+    margin: 20px;
+    border: 10px solid coral;
+    text-align: center; 
+}
+</style>
+</head>
+<body>
+
+<div id="myDIV">
+<h1>One of My Favorite Line</h1>
+
+<p id="demo"></p>
+
+<script>
+myFunction();
+function myFunction() 
+{
+    var x = Math.floor((Math.random() * 4) + 0);
+    document.getElementById("demo").innerHTML = x;
+
+    var cars = ["Don't cry because it's over, smile because it happened.", "Be yourself; everyone else is already taken.", "Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.", "Be who you are and say what you feel, because those who mind don't matter, and those who matter don't mind.", "A room without books is like a body without a soul."];
+    var text = "";
+	text += cars[x] + "<br>"
+    document.getElementById("demo").innerHTML = text;
+}
+ 
+</script>
+</div>
+
+<div id="box2">
+<button onclick="gFunction()">Green</button>
+<button onclick="bFunction()">Black</button>
+<button onclick="lFunction()">Blue</button>
+<button onclick="rFunction()">Red</button>
+
+<script>
+function gFunction() {
+    document.getElementById("myDIV").style.backgroundColor = "Green";
+    document.getElementById("myDIV").style.border = "10px solid Red";
+    document.getElementById("myDIV").style.fontFamily = "Impact,Charcoal,sans-serif";
+    document.getElementById("myDIV").style.fontSize = "16px";
+}
+function bFunction() {
+    document.getElementById("myDIV").style.backgroundColor = "Black";
+    document.getElementById("myDIV").style.border = "10px solid Blue";
+    document.getElementById("myDIV").style.fontFamily = "Arial, Helvetica, sans-serif";
+    document.getElementById("myDIV").style.fontSize = "14px";
+}
+function lFunction() {
+    document.getElementById("myDIV").style.backgroundColor = "Blue";
+    document.getElementById("myDIV").style.border = "10px solid Green";
+    document.getElementById("myDIV").style.fontFamily = "Lucida Sans Unicode, Lucida Grande, sans-serif";
+    document.getElementById("myDIV").style.fontSize = "12px";
+}
+function rFunction() {
+    document.getElementById("myDIV").style.backgroundColor = "Red";
+    document.getElementById("myDIV").style.border = "10px solid Green";
+    document.getElementById("myDIV").style.fontFamily = "Courier New, Courier, monospace";
+    document.getElementById("myDIV").style.fontSize = "15px";
+}
+</script>
+</div>
+
+</body>
+</html>
